@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Security – Safe Work Habits</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #2a5298;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #2a5298;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e3c72;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .quiz button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      background: #eaeaea;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Safe Work Habits & How to report an incident </h1>
+  <p>How to stay safe at work and report cyber incidents</p>
+</header>
+
+<section>
+
+  <!-- SAFE WORK HABITS -->
+  <div class="box">
+    <h2>Safe Work Habits</h2>
+    <button onclick="toggle('safe')">Learn More</button>
+
+    <div id="safe" class="hidden">
+      <ul>
+        <li>Use Multi‑Factor Authentication (MFA)</li>
+        <li>Lock and update your devices</li>
+        <li>Use approved software and secure Wi‑Fi</li>
+        <li>Protect confidential information</li>
+        <li>Keep work and personal accounts separate</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IDENTIFY THREATS -->
+  <div class="box">
+    <h2>Identify Threats</h2>
+    <button onclick="toggle('threats')">Learn More</button>
+
+    <div id="threats" class="hidden">
+      <ul>
+        <li>Watch for suspicious emails or links</li>
+        <li>Do not open unknown attachments</li>
+        <li>Be careful of fake IT messages</li>
+        <li>When in doubt, report it</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REPORT INCIDENT -->
+  <div class="box">
+    <h2>How to Report an Incident</h2>
+    <button onclick="toggle('report')">Learn More</button>
+
+    <div id="report" class="hidden">
+      <ul>
+        <li>Disconnect from Wi‑Fi immediately</li>
+        <li>Do not delete related emails or files</li>
+        <li>Contact IT / Service Desk</li>
+        <li>Inform your manager</li>
+        <li>Follow IT instructions</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- QUIZ -->
+<section class="quiz">
+  <div class="box">
+    <h2>Cyber Security Quiz</h2>
+
+    <p><strong>1. What should you do with a suspicious email?</strong></p>
+    <button onclick="alert('Incorrect')">Click the link</button>
+    <button onclick="alert('Incorrect')">Reply to it</button>
+    <button onclick="alert('Correct! ✅')">Report it to IT</button>
+
+    <p><strong>2. What is MFA?</strong></p>
+    <button onclick="alert('Correct! ✅')">More than one login step</button>
+    <button onclick="alert('Incorrect')">A virus</button>
+    <button onclick="alert('Incorrect')">A password</button>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section>
+  <div class="box">
+    <h2>✅ Safe Work Checklist</h2>
+    <label><input type="checkbox"> Use MFA</label><br>
+    <label><input type="checkbox"> Lock devices</label><br>
+    <label><input type="checkbox"> Avoid phishing</label><br>
+    <label><input type="checkbox"> Use secure Wi‑Fi</label><br>
+    <label><input type="checkbox"> Separate work & personal accounts</label>
+  </div>
+</section>
+
+<footer>
+  Cyber Security Awareness – Simple Template
+</footer>
+
+<script>
+  function toggle(id) {
+    const element = document.getElementById(id);
+    element.style.display =
+      element.style.display === "none" || element.style.display === ""
+        ? "block"
+        : "none";
+  }
+</script>
+
+</body>
+</html>
