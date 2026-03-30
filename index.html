@@ -12,11 +12,32 @@
     }
 
     header {
-      background: #2a5298;
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
+        background: 
+            linear-gradient(
+            rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("cybersecurityimage.png") center / cover no-repeat;
+
+  color: white;
+  min-height: 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+    header h1 {
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
 
     section {
       padding: 30px;
@@ -67,9 +88,12 @@
 <body>
 
 <header>
-  <h1>Safe Work Habits & How to report an incident </h1>
-  <p>How to stay safe at work and report cyber incidents</p>
+  <div>
+    <h1>Safe work habits & How to report an incident</h1>
+    <p>How to stay safe at work and report cyber incidents</p>
+  </div>
 </header>
+
 
 <section>
 
@@ -77,7 +101,6 @@
   <div class="box">
     <h2>Safe Work Habits</h2>
     <button onclick="toggle('safe')">Learn More</button>
-
     <div id="safe" class="hidden">
       <ul>
         <li>Use Multi‑Factor Authentication (MFA)</li>
@@ -93,7 +116,6 @@
   <div class="box">
     <h2>Identify Threats</h2>
     <button onclick="toggle('threats')">Learn More</button>
-
     <div id="threats" class="hidden">
       <ul>
         <li>Watch for suspicious emails or links</li>
@@ -108,7 +130,6 @@
   <div class="box">
     <h2>How to Report an Incident</h2>
     <button onclick="toggle('report')">Learn More</button>
-
     <div id="report" class="hidden">
       <ul>
         <li>Disconnect from Wi‑Fi immediately</li>
@@ -128,14 +149,22 @@
     <h2>Cyber Security Quiz</h2>
 
     <p><strong>1. What should you do with a suspicious email?</strong></p>
-    <button onclick="alert('Incorrect')">Click the link</button>
-    <button onclick="alert('Incorrect')">Reply to it</button>
-    <button onclick="alert('Correct! ✅')">Report it to IT</button>
+    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
+      Click the link
+    </button>
+    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
+      Reply to it
+    </button>
+    <button onclick="this.style.backgroundColor='green'">Report it to IT</button>
 
     <p><strong>2. What is MFA?</strong></p>
-    <button onclick="alert('Correct! ✅')">More than one login step</button>
-    <button onclick="alert('Incorrect')">A virus</button>
-    <button onclick="alert('Incorrect')">A password</button>
+    <button onclick="this.style.backgroundColor='green'">More than one login step</button>
+    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
+      A virus
+    </button>
+    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
+      A password
+    </button>
   </div>
 </section>
 
