@@ -198,6 +198,37 @@ footer {
   color: #555;
 }
  
+.section-header {
+  text-align: center;
+  margin: 60px auto 30px;
+}
+ 
+.section-header h2 {
+  font-size: 2.2rem;
+  margin: 6px 0 12px;
+  color: var(--blue-dark);
+}
+ 
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+ 
+.section-divider {
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--orange),
+    var(--blue-main)
+  );
+}
+ 
 /* ANIMATION */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-18px); }
@@ -217,9 +248,12 @@ footer {
 </header>
 </div>
  
-<!-- HIGHLIGHTS TITLE -->
-<div class="highlights-title">
+<div class="section-header">
+  <span class="section-eyebrow">
+    Awareness & Prevention
+  </span>
   <h2>Safe & Smart Work Habits</h2>
+  <div class="section-divider"></div>
 </div>
  
 <!-- HIGHLIGHTS -->
@@ -278,8 +312,12 @@ footer {
 </div>
  
 <!-- INCIDENT REPORTING TITLE -->
-<div class="highlights-title">
+<div class="section-header">
+  <span class="section-eyebrow">
+    Act Quickly & Correctly
+  </span>
   <h2>How to Report an Incident</h2>
+  <div class="section-divider"></div>
 </div>
  
 <!-- INCIDENT REPORTING TILES -->
