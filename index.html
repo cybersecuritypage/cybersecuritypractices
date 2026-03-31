@@ -1,103 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cyber Security – Safe Work Habits</title>
+<meta charset="UTF-8">
+<title>Cyber Security – Safe Work Habits</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f9;
-    }
-
-    header {
-        background: 
-            linear-gradient(
-            rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
-    url("cybersecurityimage.png") center / cover no-repeat;
-
-  color: white;
-  min-height: 350px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
+<style>
+:root {
+  --blue-light: #eef4fc;
+  --blue-main: #3a7bd5;
+  --blue-dark: #1e3c72;
+  --orange: #ff9f43;
+  --white: #ffffff;
+  --text-dark: #2c3e50;
 }
-    header h1 {
-  margin-bottom: 10px;
-  font-size: 2.4rem;
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--blue-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* HERO IMAGE */
+.hero {
+  position: relative;
+  height: 380px;
+  background: url("cybersecurityimage.jpg") center/cover no-repeat;
+}
+
+/* DARK OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(30, 60, 114, 0.75),
+    rgba(58, 123, 213, 0.75)
+  );
+}
+
+/* HEADER CONTENT */
+header {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.header-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 45px 35px;
+  color: white;
+  max-width: 750px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  animation: fadeDown 0.8s ease;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
 }
 
 header p {
-  margin: 0;
   font-size: 1.2rem;
   opacity: 0.95;
 }
 
+/* SECTIONS */
+section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* CARD BOX */
+.box {
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-    .box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
 
-    button {
-      padding: 10px 15px;
-      background: #2a5298;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+h2 {
+  margin-top: 0;
+  color: var(--blue-dark);
+}
 
-    button:hover {
-      background: #1e3c72;
-    }
+/* BUTTONS */
+button {
+  padding: 12px 20px;
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
 
-    .hidden {
-      display: none;
-      margin-top: 15px;
-    }
+button:hover {
+  background: #ff851b;
+  transform: scale(1.05);
+}
 
-    .quiz button {
-      display: block;
-      width: 100%;
-      margin: 5px 0;
-    }
+.quiz button {
+  width: 100%;
+  margin: 10px 0;
+  background: var(--blue-main);
+}
 
-    footer {
-      text-align: center;
-      background: #eaeaea;
-      padding: 15px;
-    }
-  </style>
+.quiz button:hover {
+  background: var(--blue-dark);
+}
+
+/* TOGGLE CONTENT */
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.hidden.show {
+  max-height: 500px;
+  margin-top: 18px;
+}
+
+/* LISTS */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* CHECKLIST */
+label {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 12px;
+  accent-color: var(--orange);
+  transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #dfeaf7;
+  padding: 18px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div>
-    <h1>Safe work habits & How to report an incident</h1>
-    <p>How to stay safe at work and report cyber incidents</p>
-  </div>
-</header>
-
+<!-- HERO / HEADER -->
+<div class="hero">
+  <header>
+    <div class="header-card">
+      <h1>Safe Work Habits & How to Report an Incident</h1>
+      <p>Modern cyber awareness training to keep you and your organization secure</p>
+    </div>
+  </header>
+</div>
 
 <section>
 
-  <!-- SAFE WORK HABITS -->
   <div class="box">
     <h2>Safe Work Habits</h2>
     <button onclick="toggle('safe')">Learn More</button>
@@ -112,7 +220,6 @@ header p {
     </div>
   </div>
 
-  <!-- IDENTIFY THREATS -->
   <div class="box">
     <h2>Identify Threats</h2>
     <button onclick="toggle('threats')">Learn More</button>
@@ -126,7 +233,6 @@ header p {
     </div>
   </div>
 
-  <!-- REPORT INCIDENT -->
   <div class="box">
     <h2>How to Report an Incident</h2>
     <button onclick="toggle('report')">Learn More</button>
@@ -143,56 +249,55 @@ header p {
 
 </section>
 
-<!-- QUIZ -->
 <section class="quiz">
   <div class="box">
     <h2>Cyber Security Quiz</h2>
 
     <p><strong>1. What should you do with a suspicious email?</strong></p>
-    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
-      Click the link
-    </button>
-    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
-      Reply to it
-    </button>
-    <button onclick="this.style.backgroundColor='green'">Report it to IT</button>
+    <button onclick="wrong(this)">Click the link</button>
+    <button onclick="wrong(this)">Reply to it</button>
+    <button onclick="correct(this)">Report it to IT</button>
 
     <p><strong>2. What is MFA?</strong></p>
-    <button onclick="this.style.backgroundColor='green'">More than one login step</button>
-    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
-      A virus
-    </button>
-    <button onclick="this.style.backgroundColor='red'; setTimeout(()=>this.style.backgroundColor='#2a5298',800)">
-      A password
-    </button>
+    <button onclick="correct(this)">More than one login step</button>
+    <button onclick="wrong(this)">A virus</button>
+    <button onclick="wrong(this)">A password</button>
   </div>
 </section>
 
-<!-- CHECKLIST -->
 <section>
   <div class="box">
     <h2>✅ Safe Work Checklist</h2>
-    <label><input type="checkbox"> Use MFA</label><br>
-    <label><input type="checkbox"> Lock devices</label><br>
-    <label><input type="checkbox"> Avoid phishing</label><br>
-    <label><input type="checkbox"> Use secure Wi‑Fi</label><br>
+    <label><input type="checkbox"> Use MFA</label>
+    <label><input type="checkbox"> Lock devices</label>
+    <label><input type="checkbox"> Avoid phishing</label>
+    <label><input type="checkbox"> Use secure Wi‑Fi</label>
     <label><input type="checkbox"> Separate work & personal accounts</label>
   </div>
 </section>
 
 <footer>
-  Cyber Security Awareness – Simple Template
+  Cyber Security Awareness • Modern Training Page
 </footer>
 
 <script>
-  function toggle(id) {
-    const element = document.getElementById(id);
-    element.style.display =
-      element.style.display === "none" || element.style.display === ""
-        ? "block"
-        : "none";
-  }
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle("show");
+}
+
+function correct(btn) {
+  btn.style.backgroundColor = "green";
+}
+
+function wrong(btn) {
+  btn.style.backgroundColor = "red";
+  setTimeout(() => {
+    btn.style.backgroundColor = "#3a7bd5";
+  }, 800);
+}
 </script>
 
 </body>
 </html>
+``
