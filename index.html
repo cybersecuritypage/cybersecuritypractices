@@ -3,39 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Cyber Security – Safe Work Habits</title>
-
+ 
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
 <style>
 :root {
   --blue-light: #eef4fc;
   --blue-main: #3a7bd5;
   --blue-dark: #1e3c72;
   --orange: #ff9f43;
-  --white: #ffffff;
   --text-dark: #2c3e50;
 }
-
+ 
 /* RESET */
-* {
-  box-sizing: border-box;
-}
-
-/* BODY */
+* { box-sizing: border-box; }
+ 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Inter","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
   margin: 0;
   background: var(--blue-light);
   color: var(--text-dark);
   line-height: 1.6;
 }
-
-/* HERO IMAGE */
+ 
+/* HERO */
 .hero {
   position: relative;
   height: 380px;
-  background: url("cybersecurityimage.jpg") center/cover no-repeat;
+  background: url("cybersecurityimage.jpg") center / cover no-repeat;
+  background-attachment: fixed;
 }
-
-/* DARK OVERLAY */
+ 
 .hero::after {
   content: "";
   position: absolute;
@@ -46,258 +46,353 @@ body {
     rgba(58, 123, 213, 0.75)
   );
 }
-
-/* HEADER CONTENT */
+ 
 header {
-  position: relative;
-  z-index: 1;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
-
+ 
 .header-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px) saturate(140%);
   padding: 45px 35px;
+  border-radius: 20px;
+  text-align: center;
   color: white;
-  max-width: 750px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  animation: fadeDown 0.8s ease;
+  max-width: 760px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  animation: fadeDown .8s ease;
+  transition: transform .3s ease, box-shadow .4s ease;
 }
-
-header h1 {
-  font-size: 2.6rem;
-  margin-bottom: 12px;
+ 
+.header-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,.35);
 }
-
-header p {
-  font-size: 1.2rem;
-  opacity: 0.95;
+ 
+/* HIGHLIGHTS TITLE */
+.highlights-title {
+  text-align: center;
+  margin-top: 40px;
 }
-
-/* SECTIONS */
-section {
-  padding: 50px 20px;
-  max-width: 1100px;
+ 
+.highlights-title h2 {
+  font-size: 2rem;
+}
+ 
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ FORCE 4 ON ONE LINE */
+  gap: 20px;
+  padding: 30px 20px 40px;
+ 
+  max-width: 1000px;
   margin: auto;
 }
-
-/* CARD BOX */
+ 
+.highlight-box {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+ 
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+ 
+ 
+.highlight-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+ 
+.highlight-box i {
+  font-size: 2.2rem;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+ 
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+ 
 .box {
   background: white;
-  padding: 30px;
+  padding: 28px;
   margin-bottom: 30px;
   border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: transform .3s ease;
 }
-
-.box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-}
-
-h2 {
-  margin-top: 0;
-  color: var(--blue-dark);
-}
-
+ 
+.box:hover { transform: translateY(-4px); }
+ 
+h2 i { color: var(--orange); margin-right: 10px; }
+ 
 /* BUTTONS */
 button {
-  padding: 12px 20px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
   background: var(--orange);
   color: white;
-  border: none;
-  border-radius: 10px;
+  font-size: .95rem;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: background .3s ease, transform .2s ease;
 }
-
-button:hover {
-  background: #ff851b;
-  transform: scale(1.05);
-}
-
+ 
+button:hover { transform: scale(1.05); }
+ 
 .quiz button {
   width: 100%;
-  margin: 10px 0;
+  margin: 6px 0;
   background: var(--blue-main);
 }
-
-.quiz button:hover {
-  background: var(--blue-dark);
-}
-
-/* TOGGLE CONTENT */
+ 
+.quiz button:hover { background: var(--blue-dark); }
+ 
+/* COLLAPSIBLE */
 .hidden {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  opacity: 0;
+  transition: max-height .4s ease, opacity .3s ease;
 }
-
+ 
 .hidden.show {
   max-height: 500px;
+  opacity: 1;
   margin-top: 18px;
 }
-
-/* LISTS */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin: 10px 0;
-}
-
+ 
 /* CHECKLIST */
 label {
   display: flex;
   align-items: center;
-  margin: 12px 0;
-  font-size: 1rem;
+  margin: 10px 0;
 }
-
+ 
 input[type="checkbox"] {
-  margin-right: 12px;
+  margin-right: 10px;
   accent-color: var(--orange);
-  transform: scale(1.2);
 }
-
+ 
 /* FOOTER */
 footer {
   text-align: center;
   background: #dfeaf7;
   padding: 18px;
-  font-size: 0.9rem;
+  font-size: .9rem;
   color: #555;
 }
-
-/* ANIMATIONS */
+ 
+/* ANIMATION */
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
-
 <body>
-
-<!-- HERO / HEADER -->
+ 
+<!-- HERO -->
 <div class="hero">
-  <header>
-    <div class="header-card">
-      <h1>Safe Work Habits & How to Report an Incident</h1>
-      <p>Modern cyber awareness training to keep you and your organization secure</p>
-    </div>
-  </header>
+<header>
+  <div class="header-card">
+    <h1>Safe Work Habits & Incident Reporting</h1>
+    <p>How to stay safe at work and report cyber incidents</p>
+  </div>
+</header>
 </div>
-
-<section>
-
-  <div class="box">
-    <h2>Safe Work Habits</h2>
-    <button onclick="toggle('safe')">Learn More</button>
-    <div id="safe" class="hidden">
-      <ul>
-        <li>Use Multi‑Factor Authentication (MFA)</li>
-        <li>Lock and update your devices</li>
-        <li>Use approved software and secure Wi‑Fi</li>
-        <li>Protect confidential information</li>
-        <li>Keep work and personal accounts separate</li>
-      </ul>
-    </div>
+ 
+<!-- HIGHLIGHTS TITLE -->
+<div class="highlights-title">
+  <h2>Safe & Smart Work Habits</h2>
+</div>
+ 
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="highlight-box">
+    <i class="fa-solid fa-lock"></i>
+    <h3>Protect Access</h3>
+    <p>Use MFA and strong passwords</p>
   </div>
-
-  <div class="box">
-    <h2>Identify Threats</h2>
-    <button onclick="toggle('threats')">Learn More</button>
-    <div id="threats" class="hidden">
-      <ul>
-        <li>Watch for suspicious emails or links</li>
-        <li>Do not open unknown attachments</li>
-        <li>Be careful of fake IT messages</li>
-        <li>When in doubt, report it</li>
-      </ul>
-    </div>
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-laptop"></i>
+    <h3>Lock Device</h3>
+    <p>Lock your device when away</p>
   </div>
-
-  <div class="box">
-    <h2>How to Report an Incident</h2>
-    <button onclick="toggle('report')">Learn More</button>
-    <div id="report" class="hidden">
-      <ul>
-        <li>Disconnect from Wi‑Fi immediately</li>
-        <li>Do not delete related emails or files</li>
-        <li>Contact IT / Service Desk</li>
-        <li>Inform your manager</li>
-        <li>Follow IT instructions</li>
-      </ul>
-    </div>
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-envelope-open-text"></i>
+    <h3>Spot Threats</h3>
+    <p>Identify phishing attempts</p>
   </div>
-
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-headset"></i>
+    <h3>Report Fast</h3>
+    <p>Contact IT immediately</p>
+  </div>
 </section>
-
+ 
+<!-- SAFE WORK HABITS + CHECKLIST -->
+<section>
+ 
+<!-- HOT TIPS -->
+<div class="box">
+  <h2><i class="fa-solid fa-shield-halved"></i>Hot Tips for Safe & Smart Work Habits</h2>
+  <button onclick="toggle('safe')">Learn More</button>
+  <div id="safe" class="hidden">
+    <ul>
+      <li>Use Multi‑Factor Authentication (MFA)</li>
+      <li>Lock and update devices</li>
+      <li>Use approved software and secure Wi‑Fi</li>
+      <li>Protect confidential data</li>
+      <li>Separate work and personal accounts</li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- ✅ SAFE WORK CHECKLIST (MOVED HERE) -->
+<div class="box">
+  <h2><i class="fa-solid fa-check-circle"></i>Safe Work Checklist</h2>
+  <label><input type="checkbox"> Use MFA</label>
+  <label><input type="checkbox"> Lock devices</label>
+  <label><input type="checkbox"> Avoid phishing</label>
+  <label><input type="checkbox"> Use secure Wi‑Fi</label>
+  <label><input type="checkbox"> Separate work & personal accounts</label>
+</div>
+ 
+<!-- INCIDENT REPORTING TITLE -->
+<div class="highlights-title">
+  <h2>How to Report an Incident</h2>
+</div>
+ 
+<!-- INCIDENT REPORTING TILES -->
+<section class="highlights">
+  <div class="highlight-box">
+  <i class="fa-solid fa-network-wired"></i>
+  <h3>Disconnect</h3>
+  <p>Disconnect from Wi‑Fi or network</p>
+</div>
+ 
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-database"></i>
+    <h3>Preserve Evidence</h3>
+    <p>Do not delete emails or files</p>
+  </div>
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-headset"></i>
+    <h3>Contact IT</h3>
+    <p>Report immediately</p>
+  </div>
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-user-tie"></i>
+    <h3>Inform Manager</h3>
+    <p>Notify your manager</p>
+  </div>
+</section>
+ 
+<!-- INCIDENT REPORTING BOXES (STACKED LIKE SAFE WORK HABITS) -->
+<section>
+ 
+<!-- HOW TO REPORT BOX -->
+<div class="box">
+  <h2><i class="fa-solid fa-bug"></i>How to Report an Incident</h2>
+  <button onclick="toggle('incident')">Learn More</button>
+  <div id="incident" class="hidden">
+    <ul>
+      <li>Disconnect your device from the network</li>
+      <li>Do not delete suspicious emails, files, or messages</li>
+      <li>Contact IT / Service Desk immediately</li>
+      <li>Provide all relevant details</li>
+      <li>Inform your manager</li>
+    </ul>
+  </div>
+</div>
+ 
+<!-- INCIDENT CHECKLIST -->
+<div class="box">
+  <h2><i class="fa-solid fa-clipboard-check"></i>Incident Reporting Checklist</h2>
+  <label><input type="checkbox"> Disconnected from network</label>
+  <label><input type="checkbox"> Preserved evidence</label>
+  <label><input type="checkbox"> Contacted IT / Service Desk</label>
+  <label><input type="checkbox"> Informed manager</label>
+  <label><input type="checkbox"> Shared incident details</label>
+</div>
+ 
+</section>
+ 
+ 
+</section>
+ 
+<!-- QUIZ -->
 <section class="quiz">
-  <div class="box">
-    <h2>Cyber Security Quiz</h2>
-
-    <p><strong>1. What should you do with a suspicious email?</strong></p>
-    <button onclick="wrong(this)">Click the link</button>
-    <button onclick="wrong(this)">Reply to it</button>
-    <button onclick="correct(this)">Report it to IT</button>
-
-    <p><strong>2. What is MFA?</strong></p>
-    <button onclick="correct(this)">More than one login step</button>
-    <button onclick="wrong(this)">A virus</button>
-    <button onclick="wrong(this)">A password</button>
-  </div>
+<div class="box">
+  <h2><i class="fa-solid fa-circle-question"></i>Cyber Security Quiz</h2>
+ 
+  <p><b>1. What should you do with a suspicious email?</b></p>
+  <button onclick="wrong(this)">Click the link</button>
+  <button onclick="wrong(this)">Reply to it</button>
+  <button onclick="correct(this)">Report it to IT</button>
+ 
+  <p><b>2. What is MFA?</b></p>
+  <button onclick="correct(this)">More than one login step</button>
+  <button onclick="wrong(this)">A virus</button>
+  <button onclick="wrong(this)">A password</button>
+ 
+   <p><b>3. Which Windows keyboard shortcut can you use to lock your laptop?</b></p>
+  <button onclick="wrong(this)">Ctrl + Alt + Windows Logo Key</button>
+  <button onclick="wrong(this)">Ctrl + L</button>
+  <button onclick="correct(this)">Windows Logo Key + L</button>
+</div>
 </section>
-
-<section>
-  <div class="box">
-    <h2>✅ Safe Work Checklist</h2>
-    <label><input type="checkbox"> Use MFA</label>
-    <label><input type="checkbox"> Lock devices</label>
-    <label><input type="checkbox"> Avoid phishing</label>
-    <label><input type="checkbox"> Use secure Wi‑Fi</label>
-    <label><input type="checkbox"> Separate work & personal accounts</label>
-  </div>
-</section>
-
+ 
 <footer>
-  Cyber Security Awareness • Modern Training Page
+Cyber Security Awareness • Modern Training Page
 </footer>
-
+ 
 <script>
 function toggle(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle("show");
+  document.getElementById(id).classList.toggle("show");
 }
-
+ 
 function correct(btn) {
   btn.style.backgroundColor = "green";
+  btn.innerHTML = "✅ Correct!";
 }
-
+ 
 function wrong(btn) {
+  const original = btn.innerHTML;
   btn.style.backgroundColor = "red";
+  btn.innerHTML = "❌ Try Again";
+ 
   setTimeout(() => {
     btn.style.backgroundColor = "#3a7bd5";
-  }, 800);
+    btn.innerHTML = original;
+  }, 900);
 }
 </script>
-
+ 
 </body>
+ 
+ 
 </html>
-``
+ 
