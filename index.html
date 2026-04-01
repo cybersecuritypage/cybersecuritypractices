@@ -215,6 +215,22 @@ section {
   height: auto;
   border-radius: 8px;
 }
+
+
+
+.learn-more-gif {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.learn-more-gif video {
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
  
 
 .learn-more-btn {
@@ -293,11 +309,19 @@ button:hover { transform: scale(1.05); }
   transition: max-height .4s ease, opacity .3s ease;
 }
  
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .3s ease;
+}
+
 .hidden.show {
-  max-height: 500px;
+  max-height: 2000px;   
   opacity: 1;
   margin-top: 10px;
 }
+
  
 /* CHECKLIST */
 label {
@@ -507,7 +531,16 @@ footer {
         <img src="image.png" alt="Sensitivity Labels Illustration">
       </div>
     </div>
- 
+   
+  
+<div class="learn-more-gif">
+  <video controls preload="metadata">
+    <source src="gif.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
   </div>
 </div>
  
