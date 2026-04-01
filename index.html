@@ -62,7 +62,7 @@ header {
   padding: 45px 35px;
   border-radius: 20px;
   text-align: center;
-  color: white;
+  color: rgb(247, 227, 210);
   max-width: 760px;
   box-shadow: 0 20px 40px rgba(0,0,0,.25);
   animation: fadeDown .8s ease;
@@ -242,8 +242,8 @@ footer {
 <div class="hero">
 <header>
   <div class="header-card">
-    <h1>Safe Work Habits & Incident Reporting</h1>
-    <p>How to stay safe at work and report cyber incidents</p>
+    <h1>Safe and Smart Work Habits & Incident Management</h1>
+    <p>How to stay safe at work and manage cyber security incidents</p>
   </div>
 </header>
 </div>
@@ -260,26 +260,22 @@ footer {
 <section class="highlights">
   <div class="highlight-box">
     <i class="fa-solid fa-lock"></i>
-    <h3>Protect Access</h3>
-    <p>Use MFA and strong passwords</p>
+    <h3>Lock it</h3>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-laptop"></i>
-    <h3>Lock Device</h3>
-    <p>Lock your device when away</p>
+    <h3>Handle with Care</h3>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-envelope-open-text"></i>
-    <h3>Spot Threats</h3>
-    <p>Identify phishing attempts</p>
+    <h3>Keep it Work</h3>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-headset"></i>
-    <h3>Report Fast</h3>
-    <p>Contact IT immediately</p>
+    <h3>Stay Updated</h3>
   </div>
 </section>
  
@@ -292,24 +288,14 @@ footer {
   <button onclick="toggle('safe')">Learn More</button>
   <div id="safe" class="hidden">
     <ul>
-      <li>Use Multi‑Factor Authentication (MFA)</li>
-      <li>Lock and update devices</li>
-      <li>Use approved software and secure Wi‑Fi</li>
-      <li>Protect confidential data</li>
-      <li>Separate work and personal accounts</li>
+      <li>Windows + L keyboard shortcut to lock your laptop.</li>
+      <li>Apply sensitivity labels to emails and documents.</li>
+      <li>Use work devices and accounts for work-related activities.</li>
+      <li>Check for laptop system updates frequently.</li>
     </ul>
   </div>
 </div>
- 
-<!-- ✅ SAFE WORK CHECKLIST (MOVED HERE) -->
-<div class="box">
-  <h2><i class="fa-solid fa-check-circle"></i>Safe Work Checklist</h2>
-  <label><input type="checkbox"> Use MFA</label>
-  <label><input type="checkbox"> Lock devices</label>
-  <label><input type="checkbox"> Avoid phishing</label>
-  <label><input type="checkbox"> Use secure Wi‑Fi</label>
-  <label><input type="checkbox"> Separate work & personal accounts</label>
-</div>
+
  
 <!-- INCIDENT REPORTING TITLE -->
 <div class="section-header">
@@ -324,27 +310,23 @@ footer {
 <section class="highlights">
   <div class="highlight-box">
   <i class="fa-solid fa-network-wired"></i>
-  <h3>Disconnect</h3>
-  <p>Disconnect from Wi‑Fi or network</p>
+  <h3>Access</h3>
 </div>
  
  
   <div class="highlight-box">
     <i class="fa-solid fa-database"></i>
-    <h3>Preserve Evidence</h3>
-    <p>Do not delete emails or files</p>
+    <h3>Disconnect & Don't Investigate</h3>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-headset"></i>
-    <h3>Contact IT</h3>
-    <p>Report immediately</p>
+    <h3>Report</h3>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-user-tie"></i>
-    <h3>Inform Manager</h3>
-    <p>Notify your manager</p>
+    <h3>Notify</h3>
   </div>
 </section>
  
@@ -357,17 +339,16 @@ footer {
   <button onclick="toggle('incident')">Learn More</button>
   <div id="incident" class="hidden">
     <ul>
-      <li>Disconnect your device from the network</li>
-      <li>Do not delete suspicious emails, files, or messages</li>
-      <li>Contact IT / Service Desk immediately</li>
-      <li>Provide all relevant details</li>
-      <li>Inform your manager</li>
+      <li>Be alert to suspicious communications.</li>
+      <li>Do not delete files or attempt to investigate.</li>
+      <li>Contact IT Service Desk.</li>
+      <li>Inform your manager.</li>
     </ul>
   </div>
 </div>
  
 <!-- INCIDENT CHECKLIST -->
-<div class="box">
+<div class="box" style="margin-bottom: -80px;" >
   <h2><i class="fa-solid fa-clipboard-check"></i>Incident Reporting Checklist</h2>
   <label><input type="checkbox"> Disconnected from network</label>
   <label><input type="checkbox"> Preserved evidence</label>
@@ -382,29 +363,38 @@ footer {
 </section>
  
 <!-- QUIZ -->
+ <!-- Quiz TITLE -->
+<div class="section-header">
+  <span class="section-eyebrow">
+    Learning Check
+  </span>
+  <h2>Cyber Security Quiz</h2>
+  <div class="section-divider"></div>
+</div>
 <section class="quiz">
 <div class="box">
-  <h2><i class="fa-solid fa-circle-question"></i>Cyber Security Quiz</h2>
+  <p><b>1. Which Windows keyboard shortcut can you use to lock your laptop?</b></p>
+  <button onclick="wrong(this)">Ctrl + Alt + Windows Logo Key</button>
+  <button onclick="wrong(this)">Ctrl + L</button>
+  <button onclick="correct(this)">Windows Logo Key + L</button>
+
+  <p><b>2. What do the two “D’s” stand for in Incident Management?</b></p>
+  <button onclick="wrong(this)">Disconnect and Delay</button>
+  <button onclick="correct(this)">Disconnect & Don't Investigate</button>
+  <button onclick="wrong(this)">Diagnose and Delete</button>
  
-  <p><b>1. What should you do with a suspicious email?</b></p>
-  <button onclick="wrong(this)">Click the link</button>
-  <button onclick="wrong(this)">Reply to it</button>
-  <button onclick="correct(this)">Report it to IT</button>
- 
-  <p><b>2. What is MFA?</b></p>
+  <p><b>3. What is MFA?</b></p>
   <button onclick="correct(this)">More than one login step</button>
   <button onclick="wrong(this)">A virus</button>
   <button onclick="wrong(this)">A password</button>
  
-   <p><b>3. Which Windows keyboard shortcut can you use to lock your laptop?</b></p>
-  <button onclick="wrong(this)">Ctrl + Alt + Windows Logo Key</button>
-  <button onclick="wrong(this)">Ctrl + L</button>
-  <button onclick="correct(this)">Windows Logo Key + L</button>
+
 </div>
 </section>
  
 <footer>
-Cyber Security Awareness • Modern Training Page
+Cyber Security Awareness
+• Images from Freepik 
 </footer>
  
 <script>
@@ -412,10 +402,19 @@ function toggle(id) {
   document.getElementById(id).classList.toggle("show");
 }
  
+ 
 function correct(btn) {
+  const originalText = btn.innerHTML;
+ 
   btn.style.backgroundColor = "green";
   btn.innerHTML = "✅ Correct!";
+  btn.disabled = true;
+ 
+  setTimeout(() => {
+    btn.innerHTML = originalText;
+  }, 900);
 }
+ 
  
 function wrong(btn) {
   const original = btn.innerHTML;
