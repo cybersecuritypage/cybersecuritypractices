@@ -15,6 +15,8 @@
   --blue-dark: #1e3c72;
   --orange: #ff9f43;
   --text-dark: #2c3e50;
+  --green: #438f52;
+  --lightb: #3d9dd4;
 }
  
 /* RESET */
@@ -86,7 +88,7 @@ header {
  
 .highlights {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ FORCE 4 ON ONE LINE */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 30px 20px 40px;
  
@@ -100,11 +102,24 @@ header {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.highlight-boxtwo {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
  
   min-height: 190px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
  
   transition: transform .35s ease, box-shadow .35s ease;
 }
@@ -114,12 +129,50 @@ header {
   transform: translateY(-8px);
   box-shadow: 0 18px 40px rgba(0,0,0,.18);
 }
+
+.highlight-boxtwo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
  
 .highlight-box i {
   font-size: 2.2rem;
   color: var(--orange);
   margin-bottom: 12px;
 }
+.highlight-boxtwo i {
+  font-size: 2.2rem;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.section-header + section.highlights .highlight-boxtwo i {
+  color: #438f52;   
+}
+ 
+.highlight-box h3 {
+  min-height: 48px;   
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.3;  
+}
+
+ 
+.highlight-boxtwo h3 {
+  min-height: 48px;   
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.3;  
+}
+ 
+.highlight-box p {
+  margin-top: 2;      
+}
+
+.highlight-boxtwo p {
+  margin-top: 2;      
+}
+
  
 /* SECTIONS */
 section {
@@ -130,11 +183,80 @@ section {
  
 .box {
   background: white;
-  padding: 28px;
+  padding: 20px;
   margin-bottom: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
   transition: transform .3s ease;
+}
+ 
+.box-content {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.h2two i { color: #438f52; margin-right: 10px; }
+ 
+.text-content {
+  flex: 2;
+}
+ 
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* ✅ centers image */
+  align-items: center;
+ 
+}
+ 
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+ 
+
+.learn-more-btn {
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  margin-right: 15px;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-weight: 600;
+}
+ 
+.label-list {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+ 
+.label-list li {
+  margin-bottom: 12px;
+}
+ 
+.label-list li strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+ 
+.label-list li p {
+  margin: 0;
+  color: #555;
+}
+ 
+ .box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 10px;          
+}
+
+.box-header h2 {
+  margin: 15px;                     
 }
  
 .box:hover { transform: translateY(-4px); }
@@ -174,7 +296,7 @@ button:hover { transform: scale(1.05); }
 .hidden.show {
   max-height: 500px;
   opacity: 1;
-  margin-top: 18px;
+  margin-top: 10px;
 }
  
 /* CHECKLIST */
@@ -186,7 +308,7 @@ label {
  
 input[type="checkbox"] {
   margin-right: 10px;
-  accent-color: var(--orange);
+  accent-color: var(--green);
 }
  
 /* FOOTER */
@@ -216,6 +338,23 @@ footer {
   font-weight: 600;
   color: var(--orange);
 }
+
+.section-eyebrowtwo {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #438f52;
+}
+
+.section-eyebrowthree {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3d9dd4;
+}
+
  
 .section-divider {
   width: 70px;
@@ -228,6 +367,32 @@ footer {
     var(--blue-main)
   );
 }
+
+.section-dividertwo {
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--green),
+    var(--blue-main)
+  );
+}
+
+.section-dividerthree {
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--lightb),
+    var(--blue-main)
+  );
+}
+
+
  
 /* ANIMATION */
 @keyframes fadeDown {
@@ -261,21 +426,26 @@ footer {
   <div class="highlight-box">
     <i class="fa-solid fa-lock"></i>
     <h3>Lock it</h3>
-  </div>
- 
-  <div class="highlight-box">
-    <i class="fa-solid fa-laptop"></i>
-    <h3>Handle with Care</h3>
+    <p>Use the Windows + L keyboard shortcut to lock your laptop.</p>
   </div>
  
   <div class="highlight-box">
     <i class="fa-solid fa-envelope-open-text"></i>
-    <h3>Keep it Work</h3>
+    <h3>Handle with Care</h3>
+    <p>Apply sensitivity labels to emails and documents.</p>
   </div>
  
   <div class="highlight-box">
-    <i class="fa-solid fa-headset"></i>
+    <i class="fa-solid fa-laptop"></i>
+    <h3>Keep it Work</h3>
+    <p>Only use work devices and accounts for work-related activities.</p>
+ 
+  </div>
+ 
+  <div class="highlight-box">
+    <i class="fa-solid fa-arrows-rotate"></i>
     <h3>Stay Updated</h3>
+    <p>Check for laptop system updates frequently.</p>
   </div>
 </section>
  
@@ -284,77 +454,113 @@ footer {
  
 <!-- HOT TIPS -->
 <div class="box">
-  <h2><i class="fa-solid fa-shield-halved"></i>Hot Tips for Safe & Smart Work Habits</h2>
-  <button onclick="toggle('safe')">Learn More</button>
+  
+<div class="box-header">
+  <h2>
+    <i class="fa-solid fa-shield-halved"></i>
+    Label It Right!
+  </h2>
+
+  <button class="learn-more-btn" onclick="toggle('safe')">
+    Learn More
+  </button>
+</div>
+ 
+  <!-- COLLAPSIBLE CONTENT -->
   <div id="safe" class="hidden">
-    <ul>
-      <li>Windows + L keyboard shortcut to lock your laptop.</li>
-      <li>Apply sensitivity labels to emails and documents.</li>
-      <li>Use work devices and accounts for work-related activities.</li>
-      <li>Check for laptop system updates frequently.</li>
-    </ul>
+ 
+    <div class="box-content">
+      <!-- LEFT: TEXT -->
+      <div class="text-content">
+        <p>
+          Sensitivity labels help ensure information is handled, shared, and protected
+          appropriately, reducing the risk of data breaches and unauthorized access.
+        </p>
+ 
+        <p class="subtitle">The Four Sensitivity Labels:</p>
+ 
+        <ul class="label-list">
+          <li>
+            <strong>Unclassified</strong>
+            <p>Information approved for public release with no additional safeguards required.</p>
+          </li>
+ 
+          <li>
+            <strong>Low Sensitivity</strong>
+            <p>Information for internal staff and approved partners where unauthorized disclosure would cause minor harm.</p>
+          </li>
+ 
+          <li>
+            <strong>Medium Sensitivity</strong>
+            <p>Information for a limited group where unauthorized disclosure could cause serious harm.</p>
+          </li>
+ 
+          <li>
+            <strong>High Sensitivity</strong>
+            <p>Highly sensitive information for named individuals only, where disclosure could cause severe harm.</p>
+          </li>
+        </ul>
+      </div>
+ 
+      <!-- RIGHT: IMAGE -->
+      <div class="image-content">
+        <img src="image.png" alt="Sensitivity Labels Illustration">
+      </div>
+    </div>
+ 
   </div>
 </div>
-
+ 
+ 
  
 <!-- INCIDENT REPORTING TITLE -->
 <div class="section-header">
-  <span class="section-eyebrow">
+  <span class="section-eyebrowtwo">
     Act Quickly & Correctly
   </span>
-  <h2>How to Report an Incident</h2>
-  <div class="section-divider"></div>
+  <h2>Incident Management</h2>
+  <div class="section-dividertwo"></div>
 </div>
  
 <!-- INCIDENT REPORTING TILES -->
 <section class="highlights">
-  <div class="highlight-box">
-  <i class="fa-solid fa-network-wired"></i>
-  <h3>Access</h3>
+  <div class="highlight-boxtwo">
+   <i class="fa-solid fa-magnifying-glass"></i>
+  <h3>Assess</h3>
+  <p>Be alert to suspicious communications.</p>
 </div>
  
  
-  <div class="highlight-box">
-    <i class="fa-solid fa-database"></i>
+  <div class="highlight-boxtwo">
+    <i class="fa-solid fa-link-slash"></i>
     <h3>Disconnect & Don't Investigate</h3>
+    <p>Do not delete files or attempt to investigate.</p>
   </div>
  
-  <div class="highlight-box">
+  <div class="highlight-boxtwo">
     <i class="fa-solid fa-headset"></i>
     <h3>Report</h3>
+    <p>Contact IT Service Desk.</p>
   </div>
  
-  <div class="highlight-box">
+  <div class="highlight-boxtwo">
     <i class="fa-solid fa-user-tie"></i>
     <h3>Notify</h3>
+    <p>Inform your manager.</p>
   </div>
 </section>
  
 <!-- INCIDENT REPORTING BOXES (STACKED LIKE SAFE WORK HABITS) -->
 <section>
  
-<!-- HOW TO REPORT BOX -->
-<div class="box">
-  <h2><i class="fa-solid fa-bug"></i>How to Report an Incident</h2>
-  <button onclick="toggle('incident')">Learn More</button>
-  <div id="incident" class="hidden">
-    <ul>
-      <li>Be alert to suspicious communications.</li>
-      <li>Do not delete files or attempt to investigate.</li>
-      <li>Contact IT Service Desk.</li>
-      <li>Inform your manager.</li>
-    </ul>
-  </div>
-</div>
- 
 <!-- INCIDENT CHECKLIST -->
 <div class="box" style="margin-bottom: -80px;" >
-  <h2><i class="fa-solid fa-clipboard-check"></i>Incident Reporting Checklist</h2>
-  <label><input type="checkbox"> Disconnected from network</label>
-  <label><input type="checkbox"> Preserved evidence</label>
-  <label><input type="checkbox"> Contacted IT / Service Desk</label>
-  <label><input type="checkbox"> Informed manager</label>
-  <label><input type="checkbox"> Shared incident details</label>
+  <h2 class="h2two"><i class="fa-solid fa-clipboard-check"></i>Incident Reporting Details Checklist</h2>
+  <p>If a security incident occurs, contact the IT Service Desk immediately and provide key details such as:</p>
+  <label><input type="checkbox"> What happened</label>
+  <label><input type="checkbox"> What occurred</label>
+  <label><input type="checkbox"> What are the affected device(s) or system(s)</label>
+  <label><input type="checkbox"> Whether sensitive information was involved</label>
 </div>
  
 </section>
@@ -365,11 +571,11 @@ footer {
 <!-- QUIZ -->
  <!-- Quiz TITLE -->
 <div class="section-header">
-  <span class="section-eyebrow">
+  <span class="section-eyebrowthree">
     Learning Check
   </span>
   <h2>Cyber Security Quiz</h2>
-  <div class="section-divider"></div>
+  <div class="section-dividerthree"></div>
 </div>
 <section class="quiz">
 <div class="box">
@@ -377,24 +583,29 @@ footer {
   <button onclick="wrong(this)">Ctrl + Alt + Windows Logo Key</button>
   <button onclick="wrong(this)">Ctrl + L</button>
   <button onclick="correct(this)">Windows Logo Key + L</button>
-
+ 
   <p><b>2. What do the two “D’s” stand for in Incident Management?</b></p>
   <button onclick="wrong(this)">Disconnect and Delay</button>
   <button onclick="correct(this)">Disconnect & Don't Investigate</button>
   <button onclick="wrong(this)">Diagnose and Delete</button>
  
-  <p><b>3. What is MFA?</b></p>
-  <button onclick="correct(this)">More than one login step</button>
-  <button onclick="wrong(this)">A virus</button>
-  <button onclick="wrong(this)">A password</button>
+  <p><b>3. Which of the following best describes Medium Sensitivity labelling?</b></p>
+  <button onclick="correct(this)">Information for a specific group that must be labelled and encrypted</button>
+  <button onclick="wrong(this)">Information safe to share publicly without restrictions</button>
+  <button onclick="wrong(this)">Information that should never be shared electronically</button>
  
-
+  <p><b>4. Should you delete all related files or emails if you suspect an incident has occurred?</b></p>
+   <button onclick="wrong(this)">Yes</button>
+   <button onclick="correct(this)">No</button>
+ 
+ 
+ 
 </div>
 </section>
  
 <footer>
 Cyber Security Awareness
-• Images from Freepik 
+• Images from Freepik
 </footer>
  
 <script>
@@ -432,4 +643,3 @@ function wrong(btn) {
  
  
 </html>
- 
