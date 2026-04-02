@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Cyber Security – Safe Work Habits</title>
  
-<!-- Font Awesome Icons -->
+
 <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  
@@ -19,7 +19,6 @@
   --lightb: #3d9dd4;
 }
  
-/* RESET */
 * { box-sizing: border-box; }
  
 body {
@@ -30,14 +29,13 @@ body {
   line-height: 1.6;
 }
  
-/* HERO */
 .hero {
   position: relative;
   height: 380px;
   background: url("cybersecurityimage.jpg") center / cover no-repeat;
   background-attachment: fixed;
 }
- 
+
 .hero::after {
   content: "";
   position: absolute;
@@ -45,8 +43,7 @@ body {
   background: linear-gradient(
     to bottom right,
     rgba(30, 60, 114, 0.75),
-    rgba(58, 123, 213, 0.75)
-  );
+    rgba(58, 123, 213, 0.75));
 }
  
 header {
@@ -75,23 +72,13 @@ header {
   transform: scale(1.05);
   box-shadow: 0 30px 60px rgba(0,0,0,.35);
 }
- 
-/* HIGHLIGHTS TITLE */
-.highlights-title {
-  text-align: center;
-  margin-top: 40px;
-}
- 
-.highlights-title h2 {
-  font-size: 2rem;
-}
+
  
 .highlights {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 30px 20px 40px;
- 
   max-width: 1000px;
   margin: auto;
 }
@@ -109,18 +96,22 @@ header {
   transition: transform .35s ease, box-shadow .35s ease;
 }
 
+.highlight-box a {     
+  color: inherit;     
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .highlight-boxtwo {
   background: white;
   padding: 25px;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
- 
   min-height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
- 
   transition: transform .35s ease, box-shadow .35s ease;
 }
  
@@ -140,6 +131,7 @@ header {
   color: var(--orange);
   margin-bottom: 12px;
 }
+
 .highlight-boxtwo i {
   font-size: 2.2rem;
   color: var(--orange);
@@ -216,23 +208,6 @@ section {
   border-radius: 8px;
 }
 
-
-
-.learn-more-gif {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.learn-more-gif video {
-  max-width: 650px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-
- 
-
 .learn-more-btn {
   padding: 10px 16px;
   font-size: 1.1rem;
@@ -301,13 +276,6 @@ button:hover { transform: scale(1.05); }
  
 .quiz button:hover { background: var(--blue-dark); }
  
-/* COLLAPSIBLE */
-.hidden {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height .4s ease, opacity .3s ease;
-}
  
 .hidden {
   max-height: 0;
@@ -323,7 +291,6 @@ button:hover { transform: scale(1.05); }
 }
 
  
-/* CHECKLIST */
 label {
   display: flex;
   align-items: center;
@@ -335,7 +302,7 @@ input[type="checkbox"] {
   accent-color: var(--green);
 }
  
-/* FOOTER */
+
 footer {
   text-align: center;
   background: #dfeaf7;
@@ -343,7 +310,7 @@ footer {
   font-size: .9rem;
   color: #555;
 }
- 
+
 .section-header {
   text-align: center;
   margin: 60px auto 30px;
@@ -404,6 +371,27 @@ footer {
   );
 }
 
+
+.label-it-right-image {
+  margin-top: 16px;      
+  text-align: center;
+}
+
+.label-it-right-image img {
+  max-width: 900px;       
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.label-it-right-image figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
 .section-dividerthree {
   width: 70px;
   height: 4px;
@@ -415,19 +403,16 @@ footer {
     var(--blue-main)
   );
 }
-
-
  
 /* ANIMATION */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-18px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 </style>
 </head>
 <body>
- 
-<!-- HERO -->
 <div class="hero">
 <header>
   <div class="header-card">
@@ -445,18 +430,12 @@ footer {
   <div class="section-divider"></div>
 </div>
  
-<!-- HIGHLIGHTS -->
+
 <section class="highlights">
   <div class="highlight-box">
     <i class="fa-solid fa-lock"></i>
     <h3>Lock it</h3>
     <p>Use the Windows + L keyboard shortcut to lock your laptop.</p>
-  </div>
- 
-  <div class="highlight-box">
-    <i class="fa-solid fa-envelope-open-text"></i>
-    <h3>Handle with Care</h3>
-    <p>Apply sensitivity labels to emails and documents.</p>
   </div>
  
   <div class="highlight-box">
@@ -471,90 +450,82 @@ footer {
     <h3>Stay Updated</h3>
     <p>Check for laptop system updates frequently.</p>
   </div>
+
+   <div class="highlight-box">
+    <i class="fa-solid fa-envelope-open-text"></i>
+    <h3>Handle with Care</h3>  
+    <p>Apply sensitivity labels to emails and documents.</p>  
+  </div>
 </section>
  
-<!-- SAFE WORK HABITS + CHECKLIST -->
+<!-- SAFE WORK HABITS -->
 <section>
- 
-<!-- HOT TIPS -->
 <div class="box">
-  
 <div class="box-header">
   <h2>
     <i class="fa-solid fa-shield-halved"></i>
     Label It Right!
   </h2>
-
   <button class="learn-more-btn" onclick="toggle('safe')">
     Learn More
   </button>
 </div>
  
-  <!-- COLLAPSIBLE CONTENT -->
   <div id="safe" class="hidden">
- 
     <div class="box-content">
-      <!-- LEFT: TEXT -->
       <div class="text-content">
-        <p>
-          Sensitivity labels help ensure information is handled, shared, and protected
-          appropriately, reducing the risk of data breaches and unauthorized access.
-        </p>
+        <p>Sensitivity labels help ensure information is handled, shared, and protected
+          appropriately, reducing the risk of data breaches and unauthorized access.</p>
  
         <p class="subtitle">The Four Sensitivity Labels:</p>
  
         <ul class="label-list">
-          <li>
-            <strong>Unclassified</strong>
+          <li><strong>Unclassified</strong>
             <p>Information approved for public release with no additional safeguards required.</p>
           </li>
  
-          <li>
-            <strong>Low Sensitivity</strong>
+          <li><strong>Low Sensitivity</strong>
             <p>Information for internal staff and approved partners where unauthorized disclosure would cause minor harm.</p>
           </li>
  
-          <li>
-            <strong>Medium Sensitivity</strong>
+          <li><strong>Medium Sensitivity</strong>
             <p>Information for a limited group where unauthorized disclosure could cause serious harm.</p>
           </li>
  
-          <li>
-            <strong>High Sensitivity</strong>
+          <li><strong>High Sensitivity</strong>
             <p>Highly sensitive information for named individuals only, where disclosure could cause severe harm.</p>
           </li>
         </ul>
       </div>
  
-      <!-- RIGHT: IMAGE -->
+      <!-- IMAGE -->
       <div class="image-content">
         <img src="image.png" alt="Sensitivity Labels Illustration">
       </div>
-    </div>
+    </div> 
+    
+    <figure class="label-it-right-image">
+        <img src="label-extra.png" alt="New Outlook email with sensitivity label highlighted">
+        <figcaption>Image of new email in Outlook with sensitivity label highlighted</figcaption>
+    </figure>
 
-
-  </div>
+  </div> 
 </div>
  
  
- 
-<!-- INCIDENT REPORTING TITLE -->
+<!-- REPORTING INCIDENT-->
 <div class="section-header">
-  <span class="section-eyebrowtwo">
-    Act Quickly & Correctly
-  </span>
+  <span class="section-eyebrowtwo">Act Quickly & Correctly</span>
   <h2>Incident Management</h2>
   <div class="section-dividertwo"></div>
 </div>
  
-<!-- INCIDENT REPORTING TILES -->
 <section class="highlights">
   <div class="highlight-boxtwo">
-   <i class="fa-solid fa-magnifying-glass"></i>
-  <h3>Assess</h3>
-  <p>Be alert to suspicious communications.</p>
-</div>
- 
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <h3>Assess</h3>
+    <p>Be alert to suspicious communications.</p>
+   </div>
  
   <div class="highlight-boxtwo">
     <i class="fa-solid fa-link-slash"></i>
@@ -575,7 +546,7 @@ footer {
   </div>
 </section>
  
-<!-- INCIDENT REPORTING BOXES (STACKED LIKE SAFE WORK HABITS) -->
+<!-- CHECKLIST -->
 <section>
  
 <!-- INCIDENT CHECKLIST -->
@@ -594,7 +565,6 @@ footer {
 </section>
  
 <!-- QUIZ -->
- <!-- Quiz TITLE -->
 <div class="section-header">
   <span class="section-eyebrowthree">
     Learning Check
@@ -622,9 +592,6 @@ footer {
   <p><b>4. Should you delete all related files or emails if you suspect an incident has occurred?</b></p>
    <button onclick="wrong(this)">Yes</button>
    <button onclick="correct(this)">No</button>
- 
- 
- 
 </div>
 </section>
  
@@ -663,8 +630,5 @@ function wrong(btn) {
   }, 900);
 }
 </script>
- 
 </body>
- 
- 
 </html>
